@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Pop-up</title>
+    <style>
+        .popup {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Click a Number</h2>
+
+<p>Click a number to see a pop-up:</p>
+
+<!-- Numbers that trigger pop-up -->
+<span class="number" onclick="showPopup('One')">1</span>
+<span class="number" onclick="showPopup('Two')">2</span>
+<span class="number" onclick="showPopup('Three')">3</span>
+
+<!-- Pop-up div -->
+<div class="popup" id="popupOne">This is the number One.</div>
+<div class="popup" id="popupTwo">This is the number Two.</div>
+<div class="popup" id="popupThree">This is the number Three.</div>
+
+<script>
+    function showPopup(id) {
+        // Hide all pop-ups
+        var popups = document.querySelectorAll('.popup');
+        popups.forEach(function(popup) {
+            popup.style.display = 'none';
+        });
+
+        // Display the clicked pop-up
+        var popup = document.getElementById('popup' + id);
+        popup.style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
